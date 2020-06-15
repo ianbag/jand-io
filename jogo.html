@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Jand Adventure</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="UTF-8">
+</head>
+
+<body>
+
+	<div class="button-menu">
+		<button onclick="acaoSom()" type="button" class="btn btn-outline-warning">
+			<i class="fas fa-volume-up fa-3x" id="iconeSom"></i>
+		</button>
+
+		<button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#options">
+			<i class="fas fa-cog fa-3x"></i>
+		</button>
+	</div>
+
+	<div class="modal fade" id="options" tabindex="-1" role="dialog" aria-labelledby="options" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title">
+						<h1>Menu de opções</h1>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h2 class="text-center">Resolução: <span class="text-warning" id="resolucao">1920x1205</span></h2>
+					<br />
+					<h2 class="text-center">Volume da Música</h2>
+					<input type="range" class="volumeMusica" min=0 max=1 step=0.01 value='1' id="volumeMusica"
+						onclick="alterarVolume()">
+					<br /><br /><br />
+					<button type="button" class="btn btn-warning btn-lg btn-block" data-toggle="modal"
+						data-target="#instrucao">
+						<h2>INSTRUÇÕES</h2>
+					</button>
+					<br /><br />
+					<a href="index.html" class="btn btn-dark btn-lg btn-block">
+						<h2>SAIR DO JOGO</h2>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="instrucao" tabindex="-1" role="dialog" aria-labelledby="instrucao" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title">
+						<h1>Instruções</h1>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h2 class="text-warning">Comandos:</h2>
+					<h3><img class="img-instrucao" src="img/up.png">Seta para cima: pula</h3>
+					<h3><img class="img-instrucao" src="img/direita.png">Seta para a direita: anda para o lado direito
+					</h3>
+					<h3><img class="img-instrucao" src="img/esquerda.png">Seta para a esquerda: anda para o lado
+						esquerdo</h3>
+					<h2 class="text-warning">Objetivo:</h2>
+					<h3>O Slime Jand está apaixonado por um pudim, e incansavelmente adentra na floresta na sua busca.
+					</h3>
+					<h2 class="text-warning">Desafios:</h2>
+					<h3>Nas colinas, Jand encontra várias plataformas que podem se movimentar, e causar a sua morte.
+						Portanto, ser cauteloso e ágil é uma necessidade em sua aventura.</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="instrucao" tabindex="-1" role="dialog" aria-labelledby="instrucao" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title">
+						<h1>Instruções</h1>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h2 class="text-warning">Comandos:</h2>
+					<h3><img class="img-instrucao" src="img/up.png">Seta para cima: pula</h3>
+					<h3><img class="img-instrucao" src="img/direita.png">Seta para a direita: anda para o lado direito
+					</h3>
+					<h3><img class="img-instrucao" src="img/esquerda.png">Seta para a esquerda: anda para o lado
+						esquerdo</h3>
+					<h2 class="text-warning">Objetivo:</h2>
+					<h3>O Slime Jand está apaixonado por um pudim, e incansavelmente adentra na floresta na sua busca.
+					</h3>
+					<h2 class="text-warning">Desafios:</h2>
+					<h3>Nas colinas, Jand encontra várias plataformas que podem se movimentar, e causar a sua morte.
+						Portanto, ser cauteloso e ágil é uma necessidade em sua aventura.</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="cheats" tabindex="-1" role="dialog" aria-labelledby="cheats" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title">
+						<h1>CHEATS DE DESENVOLVIMENTO</h1>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<button data-dismiss="modal" type="button" class="btn btn-warning btn-lg btn-block" onclick="pegouChave = true">
+						<h2>PEGAR A CHAVE</h2>
+					</button>
+					<br /><br />
+					<button data-dismiss="modal" type="button" class="btn btn-warning btn-lg btn-block" onclick="teleportarPorta()">
+						<h2>TELEPORTAR PARA A PORTA</h2>
+					</button>
+					<br /><br />
+					<button data-dismiss="modal" type="button" class="btn btn-dark btn-lg btn-block">
+						<h2>CANCELAR</h2>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<audio id="audioBackground">
+		<source src="sound/sound-bg-01.mp3" type="audio/mpeg">
+		Seu navegador não suporta áudio.
+	</audio>
+
+	<canvas id="game" width="640" height="360"></canvas>
+	<script src="js/jquery-3.3.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jogo/audio.js"></script>
+	<script src="js/jogo/mensagens.js"></script>
+	<script src="js/jogo/game.js"></script>
+	<script src="js/jogo/spritejand.js"></script>
+	<script src="js/jogo/teclas.js"></script>
+	<script src="js/jogo/movimentacao.js"></script>
+	<script src="js/jogo/plataforma.js"></script>
+	<script src="js/jogo/mapas/nivel1.js"></script>
+	<script src="js/jogo/mapas/nivel2.js"></script>
+	<script src="js/jogo/mapas/nivel3.js"></script>
+	<script src="js/jogo/mapas/nivel4.js"></script>
+	<script src="js/jogo/colisao.js"></script>
+	<script src="js/jogo/vidas-personagem.js"></script>
+</body>
+
+</html>
